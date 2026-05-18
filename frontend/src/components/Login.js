@@ -10,7 +10,7 @@ export default function Login() {
     e.preventDefault();
 
     try {
-      const res = await fetch('https://portfolio-nu-weld-49.vercel.app', {
+      const res = await fetch('https://portfolio-nu-weld-49.vercel.app/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: username, password }),
@@ -21,7 +21,7 @@ export default function Login() {
       if (res.ok) {
         alert('✅ Login Successful!');
         localStorage.setItem('token', data.token);
-        setTimeout(() => navigate('/'), 800); // redirect to portfolio
+        setTimeout(() => navigate('/'), 800);
       } else {
         alert(data.message || 'Login failed');
       }
@@ -57,4 +57,4 @@ export default function Login() {
       </Link>
     </div>
   );
-}
+}``
