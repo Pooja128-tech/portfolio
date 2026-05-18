@@ -1,3 +1,5 @@
 node_modules
 .env
 build
+echo "node_modules/" >> frontend/.gitignore
+echo "node_modules/" >> .gitignore
